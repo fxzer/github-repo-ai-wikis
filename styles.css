@@ -136,38 +136,43 @@
   color: #218bff;
 }
 
-/* 暗黑模式 */
-@media (prefers-color-scheme: dark) {
-  .dqa-main-btn,
-  .dqa-dropdown-trigger {
-    color: #c9d1d9;
-    background-color: #21262d;
-  }
-  .dqa-main-btn:hover,
-  .dqa-dropdown-trigger:hover {
-    background-color: var(--button-default-bgColor-hover);
-  }
+/* 暗黑模式 - 基于 GitHub 主题 */
+[data-color-mode="dark"] .dqa-main-btn,
+[data-color-mode="dark"] .dqa-dropdown-trigger {
+  color: #c9d1d9;
+  background-color: #21262d;
+}
 
-  .dqa-main-btn {
-    border-right-color: rgba(240, 246, 252, 0.1);
-  }
-  .dqa-dropdown-header {
-    border-bottom-color: #30363d;
-  }
-  .dqa-dropdown-item {
-    border-bottom-color: #30363d;
-  }
-  .dqa-dropdown-item:hover {
-    background-color: #21262d;
-  }
-  .dqa-item-link {
-    color: #c9d1d9;
-  }
-  .dqa-item-link svg,
-  .dqa-pin-btn {
-    color: #8b949e;
-  }
-  .dqa-pin-btn.pinned svg {
-    color: #58a6ff;
-  }
+[data-color-mode="dark"] .dqa-main-btn:hover,
+[data-color-mode="dark"] .dqa-dropdown-trigger:hover {
+  background-color: var(--button-default-bgColor-hover);
+}
+
+[data-color-mode="dark"] .dqa-main-btn {
+  border-right-color: rgba(240, 246, 252, 0.1);
+}
+
+[data-color-mode="dark"] .dqa-dropdown-header {
+  border-bottom-color: #30363d;
+}
+
+[data-color-mode="dark"] .dqa-dropdown-item {
+  border-bottom-color: #30363d;
+}
+
+[data-color-mode="dark"] .dqa-dropdown-item:hover {
+  background-color: #21262d;
+}
+
+[data-color-mode="dark"] .dqa-item-link {
+  color: #c9d1d9;
+}
+
+[data-color-mode="dark"] .dqa-item-link svg,
+[data-color-mode="dark"] .dqa-pin-btn {
+  color: #8b949e;
+}
+
+[data-color-mode="dark"] .dqa-pin-btn.pinned svg {
+  color: #58a6ff;
 }
