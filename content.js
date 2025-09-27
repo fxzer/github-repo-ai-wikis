@@ -101,7 +101,19 @@
     dropdownTrigger.innerHTML = `<svg aria-hidden="true" focusable="false" class="octicon octicon-triangle-down" viewBox="0 0 16 16" width="16" height="16" fill="currentPath" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path></svg>`;
     dropdownTrigger.onclick = e => {
       e.stopPropagation();
-      container.classList.toggle('open');
+      const isOpen = container.classList.toggle('open');
+      if (isOpen) {
+        // 添加全局点击监听
+        document.addEventListener('click', onOutsideClick);
+      } else {
+        document.removeEventListener('click', onOutsideClick);
+      }
+      function onOutsideClick(event) {
+        if (!container.contains(event.target)) {
+          container.classList.remove('open');
+          document.removeEventListener('click', onOutsideClick);
+        }
+      }
     };
 
     // 下拉菜单
@@ -110,12 +122,7 @@
     btnGroup.append(mainBtn, dropdownTrigger);
     container.append(btnGroup, dropdownMenu);
 
-    // 点击外部关闭
-    document.addEventListener(
-      'click',
-      () => container.classList.remove('open'),
-      { once: true }
-    );
+    // 移除原有的点击外部关闭逻辑（已在trigger里处理）
 
     return container;
   }
