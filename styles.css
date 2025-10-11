@@ -10,7 +10,7 @@
   align-items: center;
   border: 1px solid var(--borderColor-default);
   border-radius: 6px;
-  box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  box-shadow: var(--shadow-resting-xsmall);
   height: 28px;
   overflow: hidden; /* 确保子元素的背景不会溢出圆角 */
 }
@@ -25,15 +25,15 @@
   line-height: 20px;
   color: var(--fgColor-default);
   text-decoration: none;
-  border-right: 1px solid rgba(27, 31, 36, 0.15);
+  border-right: 1px solid var(--borderColor-default);
   height: 100%;
-  background-color: #f6f8fa;
+  background-color: var(--button-default-bgColor-rest);
   transition: background-color 0.2s;
 }
 
 .dqa-main-btn:hover {
   text-decoration: none;
-  background-color: #f3f4f6;
+  background-color: var(--button-default-bgColor-hover);
 }
 
 .dqa-main-btn svg {
@@ -47,14 +47,14 @@
   padding: 0 8px;
   cursor: pointer;
   line-height: 20px;
-  color: #59636e;
+  color: var(--fgColor-muted);
   height: 100%;
-  background-color: #f6f8fa;
+  background-color: var(--button-default-bgColor-rest);
   transition: background-color 0.2s;
 }
 
 .dqa-dropdown-trigger:hover {
-  background-color: #f3f4f6;
+  background-color: var(--button-default-bgColor-hover);
 }
 
 .dqa-dropdown-trigger svg {
@@ -64,15 +64,15 @@
 /* 下拉菜单 */
 .dqa-dropdown-menu {
   display: none;
+  border: none;
   position: absolute;
   top: 100%;
   right: 0;
   margin-top: 8px;
   width: 200px;
-  background-color: #fff;
   background-color: var(--overlay-bgColor);
-  border: 1px solid var(--borderColor-default);
   border-radius: 6px;
+  box-shadow: var(--shadow-floating-medium);
   z-index: 99;
 }
 
@@ -84,7 +84,7 @@
   padding: 8px 10px;
   font-size: 12px;
   font-weight: 600;
-  border-bottom: 1px solid #eaecef;
+  border-bottom: 1px solid var(--borderColor-muted);
 }
 
 .dqa-dropdown-list {
@@ -97,31 +97,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 10px;
+  padding: 6px 10px;
   font-size: 12px;
-  border-bottom: 1px solid #eaecef;
+  border-bottom: 1px solid var(--borderColor-muted);
   cursor: pointer;
 }
-
 .dqa-dropdown-item:last-child {
   border-bottom: none;
 }
 
 .dqa-dropdown-item:hover {
-  background-color: #f6f8fa;
+  background-color: var(--control-bgColor-hover);
 }
 
 .dqa-item-link {
   display: flex;
   align-items: center;
-  color: #24292f;
+  color: var(--fgColor-default);
   text-decoration: none;
   flex-grow: 1;
 }
 
 .dqa-item-link svg {
   margin-right: 8px;
-  color: #57606a;
+  color: var(--fgColor-muted);
 }
 
 .dqa-pin-btn {
@@ -129,50 +128,11 @@
   border: none;
   cursor: pointer;
   padding: 0 4px;
-  color: #57606a;
+  color: var(--fgColor-muted);
 }
 
 .dqa-pin-btn.pinned svg {
-  color: #218bff;
+  color: var(--fgColor-accent);
 }
 
-/* 暗黑模式 - 基于 GitHub 主题 */
-[data-color-mode="dark"] .dqa-main-btn,
-[data-color-mode="dark"] .dqa-dropdown-trigger {
-  color: #c9d1d9;
-  background-color: #21262d;
-}
-
-[data-color-mode="dark"] .dqa-main-btn:hover,
-[data-color-mode="dark"] .dqa-dropdown-trigger:hover {
-  background-color: var(--button-default-bgColor-hover);
-}
-
-[data-color-mode="dark"] .dqa-main-btn {
-  border-right-color: rgba(240, 246, 252, 0.1);
-}
-
-[data-color-mode="dark"] .dqa-dropdown-header {
-  border-bottom-color: #30363d;
-}
-
-[data-color-mode="dark"] .dqa-dropdown-item {
-  border-bottom-color: #30363d;
-}
-
-[data-color-mode="dark"] .dqa-dropdown-item:hover {
-  background-color: #21262d;
-}
-
-[data-color-mode="dark"] .dqa-item-link {
-  color: #c9d1d9;
-}
-
-[data-color-mode="dark"] .dqa-item-link svg,
-[data-color-mode="dark"] .dqa-pin-btn {
-  color: #8b949e;
-}
-
-[data-color-mode="dark"] .dqa-pin-btn.pinned svg {
-  color: #58a6ff;
-}
+/* GitHub 的 CSS 变量会自动适配所有主题，无需额外样式 */
