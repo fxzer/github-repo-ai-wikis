@@ -1,7 +1,14 @@
 /* 容器样式 */
 .dqa-container {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0;
+  list-style: none;
+}
+
+/* 兼容旧版 pagehead-actions */
+ul.pagehead-actions .dqa-container {
   margin-right: 8px;
 }
 
@@ -13,6 +20,7 @@
   box-shadow: var(--shadow-resting-xsmall);
   height: 28px;
   overflow: hidden; /* 确保子元素的背景不会溢出圆角 */
+  box-sizing: border-box;
 }
 
 /* 主按钮 */
@@ -27,8 +35,10 @@
   text-decoration: none;
   border-right: 1px solid var(--borderColor-default);
   height: 100%;
+  box-sizing: border-box;
   background-color: var(--button-default-bgColor-rest);
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .dqa-main-btn:hover {
@@ -44,11 +54,13 @@
 .dqa-dropdown-trigger {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 8px;
   cursor: pointer;
   line-height: 20px;
   color: var(--fgColor-muted);
   height: 100%;
+  box-sizing: border-box;
   background-color: var(--button-default-bgColor-rest);
   transition: background-color 0.2s;
 }
@@ -64,16 +76,16 @@
 /* 下拉菜单 */
 .dqa-dropdown-menu {
   display: none;
-  border: none;
+  border: 1px solid var(--borderColor-default);
   position: absolute;
   top: 100%;
   right: 0;
-  margin-top: 8px;
+  margin-top: 4px;
   width: 200px;
   background-color: var(--overlay-bgColor);
   border-radius: 6px;
   box-shadow: var(--shadow-floating-medium);
-  z-index: 99;
+  z-index: 999;
 }
 
 .dqa-container.open .dqa-dropdown-menu {
@@ -84,6 +96,7 @@
   padding: 8px 10px;
   font-size: 12px;
   font-weight: 600;
+  color: var(--fgColor-muted);
   border-bottom: 1px solid var(--borderColor-muted);
 }
 
@@ -118,6 +131,10 @@
   flex-grow: 1;
 }
 
+.dqa-item-link:hover {
+  text-decoration: none;
+}
+
 .dqa-item-link svg {
   margin-right: 8px;
   color: var(--fgColor-muted);
@@ -129,6 +146,13 @@
   cursor: pointer;
   padding: 0 4px;
   color: var(--fgColor-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dqa-pin-btn:hover {
+  color: var(--fgColor-default);
 }
 
 .dqa-pin-btn.pinned svg {
