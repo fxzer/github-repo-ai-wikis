@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github Repo AI Wikis
 // @namespace    http://tampermonkey.net/
-// @version      2.0.4
+// @version      2.1.4
 // @description  Adds a quick access dropdown on GitHub repo pages to navigate to DeepWiki, ZreadAI, and ReadmeX.
 // @author       fxzer
 // @match        https://github.com/*/*
